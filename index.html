@@ -69,40 +69,26 @@
          const transactionArea = document.getElementById("transaction-area");
          transactionArea.style.display="block";        
        });
-       //deposit button even handler
-       const depositBtn= document.getElementById("depositBtn");
+     
+      //deposit button even handler
+      const depositBtn= document.getElementById("depositBtn");
        depositBtn.addEventListener("click",function(){
 
          const depositInput=document.getElementById("depositInput").value;
          const depositEnter=parseFloat(depositInput);
 
-         // const currentAmount=document.getElementById("depositAmount").innerText;
-         // const depositAmount= parseFloat(currentAmount);
-         // const totalDeposit=depositAmount + depositEnter;
-         // document.getElementById("depositAmount").innerText = totalDeposit;
+         const currentAmount=document.getElementById("depositAmount").innerText;
+         const depositAmount= parseFloat(currentAmount);
+         const totalDeposit=depositAmount + depositEnter;
+         document.getElementById("depositAmount").innerText = totalDeposit;
 
-
-
-         // const currentBalance=document.getElementById("balanceAmount").innerText;
-         // const balanceAmount=parseFloat(currentBalance);
-         // const totalBalance= balanceAmount + depositEnter;
-         // document.getElementById("balanceAmount").innerText = totalBalance;
-         depositSpanText(depositAmount,depositEnter);
-         depositSpanText(balanceAmount,depositEnter);
-         
-         function depositSpanText(id,depositEnter){
-            const depositStr=document.getElementById('id').innerText;
-            const depositAmount=parseFloat(depositSpanText);
-            document.getElementById('id').innerText=depositAmount+depositEnter;
-         }
+         const currentBalance=document.getElementById("balanceAmount").innerText;
+         const balanceAmount=parseFloat(currentBalance);
+         const totalBalance= balanceAmount + depositEnter;
+         document.getElementById("balanceAmount").innerText = totalBalance;
          
          document.getElementById("depositInput").value ="";
-       })
-       
-
-
-
-
+       })   
        //withdraw button even handler
 
        const withdrawBtn=document.getElementById('withdrawBtn');
@@ -111,39 +97,19 @@
          const withdrawInput=document.getElementById('withdrawInput').value;
          const withdrawEnter=parseFloat(withdrawInput);
 
-         // const withdrawStr=document.getElementById('withdrawAmount').innerText;
-         // const withdrawAmount=parseFloat(withdrawStr);
-         // const totalWithdraw=withdrawAmount+withdrawEnter;
-         // document.getElementById('withdrawAmount').innerText=totalWithdraw;
+         const withdrawStr=document.getElementById('withdrawAmount').innerText;
+         const withdrawAmount=parseFloat(withdrawStr);
+         const totalWithdraw=withdrawAmount+withdrawEnter;
+         document.getElementById('withdrawAmount').innerText=totalWithdraw;
 
+         const currentBalance=document.getElementById("balanceAmount").innerText;
+         const balanceAmount=parseFloat(currentBalance);
+         const totalBalance= balanceAmount - withdrawEnter;
+         document.getElementById("balanceAmount").innerText = totalBalance;
 
+         document.getElementById('withdrawInput').value='';      
 
-         // const currentBalance=document.getElementById("balanceAmount").innerText;
-         // const balanceAmount=parseFloat(currentBalance);
-         // const totalBalance= balanceAmount - withdrawEnter;
-         // document.getElementById("balanceAmount").innerText = totalBalance;
-
-
-
-         document.getElementById('withdrawInput').value='';
-
-         function updateSpan(id){
-         const withdrawStr=document.getElementById('id').innerText;
-         const withdrawAmount=parseFloat(withdrawStr);         
-         document.getElementById('id').innerText=withdrawAmount+withdrawEnter;    
-         document.getElementById('id').innerText = balanceAmount - withdrawEnter;
-         };
-
-
-       })
-       
-
-
-
-
-
-
-
+       })  
 
    </script>
 </body>
