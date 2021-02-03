@@ -113,60 +113,95 @@
 
 
 
-    //deposit button even handler
+   //  //deposit button even handler
+
+   //  const depositBtn= document.getElementById("depositBtn");
+   //     depositBtn.addEventListener("click",function(){
+
+   //       const depositInput=document.getElementById("depositInput").value;
+   //       const depositEnter=parseFloat(depositInput);
+
+   //       showDeposite("depositAmount",depositEnter);
+   //       showDeposite("balanceAmount",depositEnter);
+
+   //       document.getElementById("depositInput").value =" ";
+   //  })
+   //  function showDeposite(id,depositEnter){
+   //     const depositStr = document.getElementById(id).innerText;
+   //     const depositShow = parseFloat(depositStr);
+   //     const totalDeposit = depositEnter+depositShow;
+   //     document.getElementById(id).innerText = totalDeposit;
+   //  }
+
+
+   // //withdraw button even handler
+
+   
+
+   // const withdrawBtn= document.getElementById("withdrawBtn");
+   //     withdrawBtn.addEventListener("click",function(){
+
+   //       const withdrawInput=document.getElementById("withdrawInput").value;
+   //       const withdrawEnter=parseFloat(withdrawInput);
+
+   //       showWithdraw("withdrawAmount",withdrawEnter);
+   //       showWithdraw("balanceAmount",-withdrawEnter);
+
+   //       document.getElementById("withdrawInput").value =" ";
+   //  })
+   //  function showWithdraw(id,withdrawEnter){
+   //     const withdrawStr = document.getElementById(id).innerText;
+   //     const withdrawShow = parseFloat(withdrawStr);
+   //     const totalWithdraw = withdrawEnter+withdrawShow;
+   //     document.getElementById(id).innerText = totalWithdraw;
+   //   }
+
+
+
+
+
+
+   // deposit button even handler
 
     const depositBtn= document.getElementById("depositBtn");
        depositBtn.addEventListener("click",function(){
 
-         const depositInput=document.getElementById("depositInput").value;
-         const depositEnter=parseFloat(depositInput);
-
-         showDeposite("depositAmount",depositEnter);
-         showDeposite("balanceAmount",depositEnter);
+        
+         const depositEnter=inputId("depositInput");
+         
+         showAmount("depositAmount",depositEnter);
+         showAmount("balanceAmount",depositEnter);
 
          document.getElementById("depositInput").value =" ";
     })
-    function showDeposite(id,depositEnter){
-       const depositStr = document.getElementById(id).innerText;
-       const depositShow = parseFloat(depositStr);
-       const totalDeposit = depositEnter+depositShow;
+    function showAmount(id,depositEnter){
+       const Str = document.getElementById(id).innerText;
+       const amountShow = parseFloat(Str);
+       const totalDeposit = depositEnter+amountShow;
        document.getElementById(id).innerText = totalDeposit;
     }
 
 
    //withdraw button even handler
 
-   //deposit button even handler
+   
 
    const withdrawBtn= document.getElementById("withdrawBtn");
        withdrawBtn.addEventListener("click",function(){
 
-         const withdrawInput=document.getElementById("withdrawInput").value;
-         const withdrawEnter=parseFloat(withdrawInput);
+        
+         const withdrawEnter=inputId("withdrawInput");
 
-         showWithdraw("withdrawAmount",withdrawEnter);
-         showWithdraw("balanceAmount",-withdrawEnter);
+         showAmount("withdrawAmount",withdrawEnter);
+         showAmount("balanceAmount",-withdrawEnter);
 
          document.getElementById("withdrawInput").value =" ";
     })
-    function showWithdraw(id,withdrawEnter){
-       const withdrawStr = document.getElementById(id).innerText;
-       const withdrawShow = parseFloat(withdrawStr);
-       const totalWithdraw = withdrawEnter+withdrawShow;
-       document.getElementById(id).innerText = totalWithdraw;
-     }
-
-    
-
-
-
-
-
-
-
-
-
-
+    function inputId(id){
+      const InputId=document.getElementById(id).value;
+      const amountInput=parseFloat(InputId);
+      return amountInput;
+    }
 
 
    </script>
